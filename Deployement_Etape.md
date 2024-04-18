@@ -101,7 +101,26 @@ Pour pousser votre image Docker vers un registre Docker, tel que Docker Hub, vou
 
 Une fois ces étapes terminées, votre image Docker devrait être disponible sur le registre Docker spécifié, accessible à d'autres utilisateurs qui ont les autorisations nécessaires pour y accéder. Vous pouvez vérifier la disponibilité de votre image en visitant le registre Docker et en recherchant votre nom d'utilisateur.
 
-8 . execution du conteneur 
+8.(optionnelle)
+```bash 
+docker tag mon_image:latest nouveau-repo:latest
+
+```
+
+## Etape pour envoyer une image sur dockerHub
+
+-- création d'un d'un referentiel sur dockerHub
+
+```bash
+docker build -t <nom-de-l-image>:<tag> <chemin-vers-le-Dockerfile-ou-le-contexte-de-build>
+```
+
+.
+```bash 
+   docker push nouveau-repo:nom-du-nouveau-tag
+```
+
+. execution du conteneur 
 
 ```bash
     docker run -it --name new-conteneur mon_image /bin/bash
